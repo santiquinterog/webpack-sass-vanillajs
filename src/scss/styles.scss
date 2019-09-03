@@ -1,0 +1,41 @@
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+// font-awesome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "./base/reset";
+@import "./abstracts/variables";
+@import "./components/menu";
+
+
+
+// $colors: hsl(0, 100, 50);
+
+// @for $i from 1 through 360 {
+//     $colors: append($colors, hsl($i, 100, 50), comma)
+// }
+
+// .main {
+//     background: radial-gradient($colors);
+//     min-height: 100vh;
+// }
+
+$heigth: 4em;
+$innColorNav: hsl(200, 30, 10);
+
+.main-nav {
+  @include innNav($heigth);
+}
+
+.main-menu {
+  @include innMenu;
+}
+
+.hamburguer {
+  @extend %fa-icon;
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-arrow-down);
+    color: green;
+  }
+}
