@@ -28,5 +28,13 @@ export function createElement (type, objAttr, children) {
   
   addAttributes(el, objAttr)
 
+  if (children && children.length >= 0) {
+    children.forEach((child) => {
+      child instanceof HTMLElement
+        ? el.appendChild(child)
+        : el.innerHTML += child
+    })
+  }
+
   return el
 }

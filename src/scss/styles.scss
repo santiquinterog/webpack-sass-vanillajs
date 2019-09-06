@@ -1,41 +1,68 @@
-$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
-// font-awesome
-@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "~@fortawesome/fontawesome-free/scss/solid.scss";
-@import "./base/reset";
+@import "./base/base";
 @import "./abstracts/variables";
-@import "./components/menu";
+@import "./layout/container";
 
 
 
-// $colors: hsl(0, 100, 50);
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(
+    to bottom,
+  hsl(0, 10, 20) 50%,
+  hsl(0, 0, 90) 50%,
+  hsl(0, 0, 90) 100%
+  );
 
-// @for $i from 1 through 360 {
-//     $colors: append($colors, hsl($i, 100, 50), comma)
-// }
+  &__img {
+    width: 10%;
+    border-radius: 50%;
+    margin-top: 1.5rem;
+  }
 
-// .main {
-//     background: radial-gradient($colors);
-//     min-height: 100vh;
-// }
+  &__username {
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+  }
 
-$heigth: 4em;
-$innColorNav: hsl(200, 30, 10);
+  &__amount {
+    background-color: white;
+    font-size: 2.1rem;
+    font-weight: bold;
+    padding: 2.5rem 5rem 1.5rem;
+    border-radius: 11px;
+    margin: 1rem 0 5rem 0;
+    box-shadow: 0 10px 5px 5px rgba(0, 0, 0, 0.02);
 
-.main-nav {
-  @include innNav($heigth);
-}
 
-.main-menu {
-  @include innMenu;
-}
+    &--info {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+  }
 
-.hamburguer {
-  @extend %fa-icon;
-  @extend .fas;
+  &__buttons {
+    margin-top: 3em;
+    width: 100%;
 
-  &:before {
-    content: fa-content($fa-var-arrow-down);
-    color: green;
+    & > button {
+      outline: 0;
+      background: #fff;
+      color: #fe718f;
+      font-size: 1.5rem;
+      padding: 1rem;
+      margin: 1rem;
+      border: 0;
+      box-shadow: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
   }
 }
+
+
